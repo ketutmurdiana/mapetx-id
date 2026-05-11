@@ -40,15 +40,18 @@
        HEADER
     ========================== */
 
-      header{
-        position:sticky;
-        top:0;
-        z-index:1000;
-        background:rgba(255,255,255,0.96);
-        backdrop-filter:blur(14px);
-        border-bottom:1px solid rgba(0,0,0,0.05);
-        box-shadow:0 4px 20px rgba(0,0,0,0.04);
-      }
+  header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:blur(14px);
+  
+    border-bottom:2px solid transparent;
+    border-image:linear-gradient(to right,#ff7a01,#ffb347) 1;
+  
+    box-shadow:0 4px 20px rgba(0,0,0,0.04);
+  }
 
     nav{
       display:flex;
