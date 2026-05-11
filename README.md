@@ -1,2 +1,2 @@
-# mapetx-id
+# mapetx
 MAPETX Website
