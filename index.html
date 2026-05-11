@@ -6,11 +6,16 @@
   <title>MAPETX</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
       font-family:Arial,sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
@@ -31,13 +36,17 @@
       padding:0 20px;
     }
 
+    /* =========================
+       HEADER
+    ========================== */
+
     header{
       position:sticky;
       top:0;
-      z-index:100;
-      background:rgba(255,255,255,0.92);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(0,0,0,0.05);
+      z-index:1000;
+      background:linear-gradient(135deg,#ff7a01,#ff9f45);
+      backdrop-filter:blur(10px);
+      box-shadow:0 4px 20px rgba(255,122,1,0.15);
     }
 
     nav{
@@ -50,37 +59,48 @@
     .logo{
       display:flex;
       align-items:center;
-      gap:12px;
-      font-size:24px;
-      font-weight:bold;
+      gap:14px;
     }
 
-    .logo-icon{
-      width:46px;
-      height:46px;
-      border-radius:16px;
-      background:linear-gradient(135deg,#ff7a01,#ffb347);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:white;
-      font-size:22px;
-      box-shadow:0 10px 25px rgba(255,122,1,0.3);
+    .logo-image{
+      width:54px;
+      height:54px;
+      object-fit:contain;
+      border-radius:14px;
+      background:white;
+      padding:6px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .nama-image{
+      height:34px;
+      width:auto;
+      object-fit:contain;
     }
 
     .nav-links{
       display:flex;
-      gap:28px;
-      color:#475569;
+      align-items:center;
+      gap:34px;
+      color:white;
       font-size:15px;
+      font-weight:600;
+    }
+
+    .nav-links a{
+      transition:0.3s;
     }
 
     .nav-links a:hover{
-      color:#ff7a01;
+      opacity:0.8;
     }
 
+    /* =========================
+       HERO
+    ========================== */
+
     .hero{
-      padding:100px 0 90px;
+      padding:90px 0 80px;
       display:grid;
       grid-template-columns:1fr 1fr;
       align-items:center;
@@ -88,38 +108,38 @@
     }
 
     .hero h1{
-      font-size:64px;
-      line-height:1.1;
+      font-size:68px;
+      line-height:1.08;
       margin-bottom:24px;
+      font-weight:800;
     }
 
     .hero span{
-      background:linear-gradient(135deg,#ff7a01,#ffb347);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      color:#ff7a01;
     }
 
     .hero p{
       color:#475569;
       font-size:18px;
       line-height:1.8;
-      margin-bottom:35px;
+      margin-bottom:36px;
+      max-width:580px;
     }
 
     .buttons{
       display:flex;
-      gap:16px;
+      gap:18px;
       flex-wrap:wrap;
     }
 
     .btn-primary{
       background:linear-gradient(135deg,#ff7a01,#ff9f45);
       color:white;
-      padding:16px 28px;
-      border-radius:16px;
+      padding:17px 30px;
+      border-radius:18px;
       font-weight:bold;
-      box-shadow:0 15px 30px rgba(255,122,1,0.25);
       transition:0.3s;
+      box-shadow:0 12px 30px rgba(255,122,1,0.25);
     }
 
     .btn-primary:hover{
@@ -127,77 +147,69 @@
     }
 
     .btn-secondary{
-      background:#f8fafc;
-      border:1px solid rgba(0,0,0,0.06);
-      padding:16px 28px;
-      border-radius:16px;
-      color:#475569;
+      background:white;
+      border:2px solid rgba(255,122,1,0.2);
+      color:#ff7a01;
+      padding:17px 30px;
+      border-radius:18px;
+      font-weight:bold;
       transition:0.3s;
     }
 
     .btn-secondary:hover{
-      background:#f1f5f9;
+      background:#fff4ea;
     }
+
+    /* =========================
+       PHONE MOCKUP
+    ========================== */
 
     .phone{
       display:flex;
       justify-content:center;
+      position:relative;
+    }
+
+    .phone::before{
+      content:'';
+      position:absolute;
+      width:420px;
+      height:420px;
+      background:#fff1e8;
+      border-radius:50%;
+      z-index:-1;
+      top:90px;
     }
 
     .phone-frame{
-      width:320px;
-      background:white;
-      border-radius:40px;
-      padding:18px;
-      border:1px solid rgba(0,0,0,0.08);
-      box-shadow:0 30px 60px rgba(0,0,0,0.12);
+      width:350px;
+      background:#111827;
+      border-radius:42px;
+      padding:14px;
+      box-shadow:0 30px 60px rgba(0,0,0,0.18);
+      transform:rotate(-4deg);
     }
 
     .screen{
-      border-radius:28px;
+      border-radius:32px;
       overflow:hidden;
-      background:linear-gradient(180deg,#ff7a01,#ff9f45);
-      min-height:620px;
-      padding:28px;
-      color:white;
+      background:white;
+      height:720px;
     }
 
-    .screen h3{
-      font-size:28px;
-      margin-bottom:10px;
+    .dashboard-image{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-    .balance-card{
-      background:rgba(255,255,255,0.2);
-      border-radius:24px;
-      padding:24px;
-      margin-top:30px;
-      backdrop-filter:blur(10px);
-    }
-
-    .balance-card h2{
-      margin-top:10px;
-      font-size:36px;
-    }
-
-    .mini-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-      margin-top:24px;
-    }
-
-    .mini-box{
-      background:rgba(255,255,255,0.18);
-      border-radius:18px;
-      padding:18px;
-      text-align:center;
-      font-weight:600;
-    }
+    /* =========================
+       FEATURES
+    ========================== */
 
     .features{
       padding:100px 0;
-      background:#f8fafc;
+      background:#fcfcfc;
     }
 
     .section-title{
@@ -206,317 +218,499 @@
     }
 
     .section-title h2{
-      font-size:42px;
-      margin-bottom:12px;
+      font-size:44px;
+      margin-bottom:14px;
     }
 
     .section-title p{
       color:#64748b;
+      font-size:18px;
     }
 
     .feature-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:24px;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:28px;
     }
 
     .feature-card{
       background:white;
-      border:1px solid rgba(255,122,1,0.1);
+      border:1px solid rgba(255,122,1,0.08);
       border-radius:28px;
-      padding:30px;
+      padding:34px 28px;
       transition:0.3s;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
     }
 
     .feature-card:hover{
       transform:translateY(-6px);
-      border-color:rgba(255,122,1,0.35);
+      border-color:rgba(255,122,1,0.25);
     }
 
     .feature-icon{
-      width:62px;
-      height:62px;
-      border-radius:18px;
-      background:rgba(255,122,1,0.12);
+      width:72px;
+      height:72px;
+      border-radius:22px;
+      background:#fff4ea;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:28px;
-      margin-bottom:20px;
+      font-size:32px;
       color:#ff7a01;
+      margin-bottom:22px;
     }
 
     .feature-card h3{
-      margin-bottom:14px;
-      font-size:22px;
+      font-size:24px;
+      margin-bottom:16px;
     }
 
     .feature-card p{
       color:#475569;
-      line-height:1.7;
+      line-height:1.8;
+      font-size:16px;
     }
 
+    /* =========================
+       CTA
+    ========================== */
+
     .cta{
-      padding:110px 0;
+      padding:100px 0;
     }
 
     .cta-box{
-      background:linear-gradient(135deg,#ff7a01,#ff9f45);
-      border-radius:36px;
-      padding:70px 40px;
-      text-align:center;
+      background:linear-gradient(135deg,#ff7a01,#ff5e00);
+      border-radius:38px;
+      padding:70px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:40px;
+      flex-wrap:wrap;
       color:white;
-      box-shadow:0 25px 60px rgba(255,122,1,0.25);
+      overflow:hidden;
+      position:relative;
     }
 
-    .cta-box h2{
-      font-size:46px;
+    .cta-box::before{
+      content:'';
+      position:absolute;
+      width:240px;
+      height:240px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+      right:-60px;
+      bottom:-60px;
+    }
+
+    .cta-left{
+      max-width:620px;
+      z-index:2;
+    }
+
+    .cta-left h2{
+      font-size:44px;
       margin-bottom:18px;
     }
 
-    .cta-box p{
-      max-width:700px;
-      margin:auto;
-      line-height:1.8;
-      margin-bottom:35px;
+    .cta-left p{
+      line-height:1.9;
+      font-size:18px;
       opacity:0.95;
     }
 
-    footer{
-      border-top:1px solid rgba(0,0,0,0.05);
-      padding:40px 0;
-      color:#64748b;
+    .cta-btn{
       background:white;
+      color:#ff7a01;
+      padding:18px 30px;
+      border-radius:18px;
+      font-weight:bold;
+      z-index:2;
+      transition:0.3s;
+    }
+
+    .cta-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      padding:50px 0;
+      background:#ffffff;
+      border-top:1px solid rgba(0,0,0,0.05);
     }
 
     .footer-content{
       display:flex;
       justify-content:space-between;
-      align-items:center;
-      gap:20px;
+      align-items:flex-start;
+      gap:40px;
       flex-wrap:wrap;
+    }
+
+    .footer-brand{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .footer-logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .footer-logo img:first-child{
+      width:52px;
+      height:52px;
+      object-fit:contain;
+    }
+
+    .footer-logo img:last-child{
+      height:30px;
+      object-fit:contain;
+    }
+
+    .footer-text{
+      color:#64748b;
+      font-size:15px;
     }
 
     .footer-links{
       display:flex;
-      gap:24px;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .footer-links h4{
+      margin-bottom:10px;
+      font-size:18px;
+    }
+
+    .footer-links a{
+      color:#64748b;
+      transition:0.3s;
     }
 
     .footer-links a:hover{
       color:#ff7a01;
     }
 
-    @media(max-width:950px){
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:980px){
+
       .hero{
         grid-template-columns:1fr;
         text-align:center;
+      }
+
+      .hero p{
+        margin:auto;
+        margin-bottom:36px;
       }
 
       .buttons{
         justify-content:center;
       }
 
-      .hero h1{
-        font-size:48px;
+      .phone{
+        margin-top:20px;
       }
+
+      .cta-box{
+        text-align:center;
+        justify-content:center;
+      }
+
     }
 
-    @media(max-width:700px){
+    @media(max-width:760px){
+
       .nav-links{
         display:none;
       }
 
       .hero h1{
-        font-size:40px;
+        font-size:48px;
       }
 
-      .section-title h2,
-      .cta-box h2{
-        font-size:34px;
+      .section-title h2{
+        font-size:36px;
+      }
+
+      .cta-left h2{
+        font-size:36px;
       }
 
       .phone-frame{
-        width:100%;
-        max-width:320px;
+        width:310px;
       }
+
+      .screen{
+        height:640px;
+      }
+
+      .nama-image{
+        height:28px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container">
-    <nav>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-      <div class="logo">
-        <div class="logo-icon">M</div>
-        MAPETX
-      </div>
+  <header>
 
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="mailto:mapetx.id@gmail.com">Contact</a>
-      </div>
+    <div class="container">
 
-    </nav>
-  </div>
-</header>
+      <nav>
 
-<section class="hero container">
+        <div class="logo">
 
-  <div>
-    <h1>
-      Smart Digital <span>Wallet</span><br>
-      For Modern Mobility
-    </h1>
+          <img src="logo_mapetx.png" class="logo-image">
 
-    <p>
-      MAPETX is a modern digital platform designed to simplify payments, top ups, wallet transactions, and future mobility services with secure and fast technology.
-    </p>
+          <img src="nama_mapetx.png" class="nama-image">
 
-    <div class="buttons">
-      <a href="#features" class="btn-primary">Explore Features</a>
-
-      <a href="/privacy-policy.html" class="btn-secondary">
-        Privacy Policy
-      </a>
-    </div>
-  </div>
-
-  <div class="phone">
-    <div class="phone-frame">
-
-      <div class="screen">
-
-        <h3>MAPETX Wallet</h3>
-
-        <p>Fast • Secure • Modern</p>
-
-        <div class="balance-card">
-          <small>Total Balance</small>
-          <h2>Rp 1.250.000</h2>
         </div>
 
-        <div class="mini-grid">
-          <div class="mini-box">Top Up</div>
-          <div class="mini-box">Transfer</div>
-          <div class="mini-box">QR Pay</div>
-          <div class="mini-box">History</div>
+        <div class="nav-links">
+
+          <a href="#features">Features</a>
+
+          <a href="#about">About</a>
+
+          <a href="/privacy-policy.html">Privacy Policy</a>
+
+          <a href="mailto:mapetx.id@gmail.com">Contact</a>
+
         </div>
 
-      </div>
-
-    </div>
-  </div>
-
-</section>
-
-<section class="features" id="features">
-
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Powerful Features</h2>
-      <p>Built for modern digital transactions and future services.</p>
-    </div>
-
-    <div class="feature-grid">
-
-      <div class="feature-card">
-        <div class="feature-icon">💳</div>
-
-        <h3>Digital Wallet</h3>
-
-        <p>
-          Manage your balance, top ups, and transactions with a seamless wallet experience.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-
-        <h3>Fast Payments</h3>
-
-        <p>
-          Real-time payment processing powered by modern backend infrastructure.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-
-        <h3>Secure System</h3>
-
-        <p>
-          MAPETX prioritizes security and reliability for all user transactions.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">📱</div>
-
-        <h3>Mobile First</h3>
-
-        <p>
-          Optimized for Android users with responsive and intuitive design.
-        </p>
-      </div>
+      </nav>
 
     </div>
 
-  </div>
+  </header>
 
-</section>
+  <!-- =========================
+       HERO
+  ========================== -->
 
-<section class="cta" id="about">
+  <section class="hero container">
 
-  <div class="container">
+    <div>
 
-    <div class="cta-box">
-
-      <h2>MAPETX Future Ecosystem</h2>
+      <h1>
+        Smart Digital <span>Wallet</span><br>
+        For Modern Mobility
+      </h1>
 
       <p>
-        MAPETX is designed to become a scalable digital platform for payments, transportation, and modern services with secure cloud-based infrastructure.
+        MAPETX is a modern digital platform designed to simplify payments, top ups, wallet transactions, and future mobility services with secure and fast technology.
       </p>
 
-      <a href="/privacy-policy.html"
-         class="btn-secondary"
-         style="background:rgba(255,255,255,0.15);border:none;color:white;">
-        Read Privacy Policy
-      </a>
+      <div class="buttons">
 
-    </div>
+        <a href="#features" class="btn-primary">
+          Explore Features
+        </a>
 
-  </div>
+        <a href="/privacy-policy.html" class="btn-secondary">
+          Privacy Policy
+        </a>
 
-</section>
-
-<footer>
-
-  <div class="container">
-
-    <div class="footer-content">
-
-      <div>
-        © 2026 MAPETX. All rights reserved.
-      </div>
-
-      <div class="footer-links">
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="#features">Features</a>
-        <a href="mailto:mapetx.id@gmail.com">Contact</a>
       </div>
 
     </div>
 
-  </div>
+    <div class="phone">
 
-</footer>
+      <div class="phone-frame">
+
+        <div class="screen">
+
+          <!-- GANTI DENGAN SCREENSHOT APP -->
+          <img src="dashboard.png" class="dashboard-image">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FEATURES
+  ========================== -->
+
+  <section class="features" id="features">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Powerful Features</h2>
+
+        <p>
+          Built for modern digital transactions and future services.
+        </p>
+
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature-card">
+
+          <div class="feature-icon">💳</div>
+
+          <h3>Digital Wallet</h3>
+
+          <p>
+            Manage your balance, top ups, and transactions with a seamless wallet experience.
+          </p>
+
+        </div>
+
+        <div class="feature-card">
+
+          <div class="feature-icon">⚡</div>
+
+          <h3>Fast Payments</h3>
+
+          <p>
+            Real-time payment processing powered by modern backend infrastructure.
+          </p>
+
+        </div>
+
+        <div class="feature-card">
+
+          <div class="feature-icon">🔒</div>
+
+          <h3>Secure System</h3>
+
+          <p>
+            MAPETX prioritizes security and reliability for all user transactions.
+          </p>
+
+        </div>
+
+        <div class="feature-card">
+
+          <div class="feature-icon">📱</div>
+
+          <h3>Mobile First</h3>
+
+          <p>
+            Optimized for Android users with responsive and intuitive design.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       CTA
+  ========================== -->
+
+  <section class="cta" id="about">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <div class="cta-left">
+
+          <h2>MAPETX Future Ecosystem</h2>
+
+          <p>
+            MAPETX is designed to become a scalable digital platform for payments, transportation, and modern services with secure cloud-based infrastructure.
+          </p>
+
+        </div>
+
+        <a href="/privacy-policy.html" class="cta-btn">
+          Read Privacy Policy
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-brand">
+
+          <div class="footer-logo">
+
+            <img src="logo_mapetx.png">
+
+            <img src="nama_mapetx.png">
+
+          </div>
+
+          <div class="footer-text">
+            © 2026 MAPETX. All rights reserved.
+          </div>
+
+        </div>
+
+        <div class="footer-links">
+
+          <h4>Quick Links</h4>
+
+          <a href="#features">Features</a>
+
+          <a href="#about">About</a>
+
+          <a href="/privacy-policy.html">
+            Privacy Policy
+          </a>
+
+        </div>
+
+        <div class="footer-links">
+
+          <h4>Contact</h4>
+
+          <a href="mailto:mapetx.id@gmail.com">
+            mapetx.id@gmail.com
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
