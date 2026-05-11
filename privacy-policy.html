@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MAPETX Privacy Policy</title>
 
   <style>
@@ -21,8 +21,8 @@
     body{
       background:#ffffff;
       color:#111827;
-      line-height:1.8;
       overflow-x:hidden;
+      line-height:1.7;
     }
 
     a{
@@ -31,34 +31,34 @@
     }
 
     .container{
-      max-width:1000px;
+      width:100%;
+      max-width:1150px;
       margin:auto;
-      padding:40px 20px 80px;
+      padding:0 20px;
     }
 
     /* =========================
        HEADER
     ========================== */
 
-    .topbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:60px;
-      flex-wrap:wrap;
-      gap:20px;
-
+    header{
       position:sticky;
       top:0;
       z-index:1000;
-
       background:rgba(255,255,255,0.96);
       backdrop-filter:blur(14px);
 
       border-bottom:2px solid transparent;
       border-image:linear-gradient(to right,#ff7a01,#ffb347) 1;
 
-      padding:20px 0;
+      box-shadow:0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
     }
 
     .logo{
@@ -74,7 +74,7 @@
       border-radius:14px;
       background:white;
       padding:6px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
     }
 
     .nama-image{
@@ -83,18 +83,21 @@
       object-fit:contain;
     }
 
-    .back-btn{
-      padding:14px 22px;
-      border-radius:16px;
-      background:#fff4ea;
-      border:1px solid rgba(255,122,1,0.15);
-      color:#ff7a01;
-      font-weight:bold;
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:34px;
+      color:#334155;
+      font-size:15px;
+      font-weight:600;
+    }
+
+    .nav-links a{
       transition:0.3s;
     }
 
-    .back-btn:hover{
-      background:#ffe7d3;
+    .nav-links a:hover{
+      color:#ff7a01;
     }
 
     /* =========================
@@ -102,27 +105,40 @@
     ========================== */
 
     .hero{
+      padding:90px 0 60px;
       text-align:center;
-      margin-bottom:60px;
       position:relative;
+      overflow:hidden;
     }
 
     .hero::before{
       content:'';
       position:absolute;
-      width:420px;
-      height:420px;
+      width:500px;
+      height:500px;
       background:#fff3eb;
       border-radius:50%;
-      top:-180px;
+      top:-250px;
       left:50%;
       transform:translateX(-50%);
       z-index:-1;
     }
 
+    .hero-badge{
+      display:inline-block;
+      padding:10px 18px;
+      background:#fff4ea;
+      color:#ff7a01;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:26px;
+    }
+
     .hero h1{
-      font-size:58px;
-      margin-bottom:18px;
+      font-size:62px;
+      line-height:1.1;
+      margin-bottom:24px;
       font-weight:800;
     }
 
@@ -131,129 +147,239 @@
     }
 
     .hero p{
-      color:#475569;
-      max-width:720px;
+      max-width:760px;
       margin:auto;
+      color:#475569;
       font-size:18px;
       line-height:1.9;
     }
 
-    .badge{
-      display:inline-block;
-      margin-top:24px;
-      padding:12px 22px;
-      border-radius:999px;
-      background:#fff4ea;
-      border:1px solid rgba(255,122,1,0.18);
-      color:#ff7a01;
-      font-size:14px;
-      font-weight:700;
-    }
-
     /* =========================
-       CARD
+       POLICY CONTENT
     ========================== */
 
-    .card{
+    .policy-section{
+      padding:40px 0 100px;
+    }
+
+    .policy-wrapper{
+      max-width:950px;
+      margin:auto;
+    }
+
+    .policy-card{
       background:white;
-      border-radius:34px;
-      padding:50px;
       border:1px solid rgba(255,122,1,0.08);
-      box-shadow:0 18px 50px rgba(0,0,0,0.05);
+      border-radius:34px;
+      padding:55px;
+      margin-bottom:30px;
+      box-shadow:0 12px 40px rgba(0,0,0,0.04);
     }
 
-    .section{
-      margin-bottom:42px;
+    .policy-card h2{
+      font-size:34px;
+      margin-bottom:22px;
+      color:#111827;
     }
 
-    .section:last-child{
-      margin-bottom:0;
-    }
-
-    .section h2{
-      color:#ff7a01;
-      margin-bottom:18px;
-      font-size:30px;
-    }
-
-    .section p{
-      color:#475569;
+    .policy-card h3{
+      font-size:24px;
+      margin-top:40px;
       margin-bottom:16px;
+      color:#ff7a01;
+    }
+
+    .policy-card p{
+      color:#475569;
+      margin-bottom:18px;
       font-size:17px;
       line-height:1.9;
     }
 
-    ul{
-      padding-left:24px;
+    .policy-card ul{
+      padding-left:22px;
       color:#475569;
+      margin-bottom:22px;
     }
 
-    li{
+    .policy-card li{
       margin-bottom:14px;
       line-height:1.8;
     }
 
+    .highlight-box{
+      background:#fff7f0;
+      border-left:5px solid #ff7a01;
+      padding:24px;
+      border-radius:20px;
+      margin:30px 0;
+    }
+
+    .highlight-box strong{
+      color:#ff7a01;
+    }
+
     /* =========================
-       CONTACT BOX
+       CONTACT CARD
     ========================== */
 
-    .contact-box{
-      margin-top:20px;
-      background:#fff7f0;
-      border:1px solid rgba(255,122,1,0.12);
-      border-left:5px solid #ff7a01;
-      border-radius:22px;
-      padding:26px;
+    .contact-card{
+      background:linear-gradient(135deg,#ff7a01,#ff5e00);
+      border-radius:34px;
+      padding:50px;
+      color:white;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
     }
 
-    .contact-box strong{
-      display:block;
-      margin-bottom:12px;
-      color:#ff7a01;
+    .contact-card::before{
+      content:'';
+      position:absolute;
+      width:220px;
+      height:220px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+      right:-70px;
+      bottom:-70px;
+    }
+
+    .contact-card h2{
+      font-size:40px;
+      margin-bottom:18px;
+      position:relative;
+      z-index:2;
+    }
+
+    .contact-card p{
       font-size:18px;
+      line-height:1.9;
+      max-width:720px;
+      margin:auto;
+      margin-bottom:30px;
+      position:relative;
+      z-index:2;
+      opacity:0.95;
     }
 
-    .contact-box a{
-      color:#111827;
+    .contact-button{
+      display:inline-block;
+      background:white;
+      color:#ff7a01;
+      padding:18px 30px;
+      border-radius:18px;
       font-weight:bold;
+      transition:0.3s;
+      position:relative;
+      z-index:2;
+    }
+
+    .contact-button:hover{
+      transform:translateY(-3px);
     }
 
     /* =========================
        FOOTER
     ========================== */
 
-    .footer{
-      text-align:center;
-      margin-top:60px;
+    footer{
+      padding:50px 0;
+      background:#ffffff;
+      border-top:1px solid rgba(0,0,0,0.05);
+    }
+
+    .footer-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+
+    .footer-brand{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .footer-logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .footer-logo img:first-child{
+      width:52px;
+      height:52px;
+      object-fit:contain;
+    }
+
+    .footer-logo img:last-child{
+      height:30px;
+      object-fit:contain;
+    }
+
+    .footer-text{
       color:#64748b;
       font-size:15px;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .footer-links h4{
+      margin-bottom:10px;
+      font-size:18px;
+    }
+
+    .footer-links a{
+      color:#64748b;
+      transition:0.3s;
+    }
+
+    .footer-links a:hover{
+      color:#ff7a01;
     }
 
     /* =========================
        RESPONSIVE
     ========================== */
 
-    @media(max-width:768px){
+    @media(max-width:760px){
+
+      .nav-links{
+        display:none;
+      }
 
       .hero h1{
         font-size:42px;
       }
 
-      .card{
+      .policy-card{
         padding:32px 24px;
       }
 
-      .topbar{
-        flex-direction:column;
-        align-items:flex-start;
+      .policy-card h2{
+        font-size:28px;
+      }
+
+      .policy-card h3{
+        font-size:22px;
+      }
+
+      .contact-card{
+        padding:38px 24px;
+      }
+
+      .contact-card h2{
+        font-size:32px;
       }
 
       .nama-image{
         height:28px;
-      }
-
-      .section h2{
-        font-size:25px;
       }
 
     }
@@ -263,137 +389,155 @@
 
 <body>
 
-  <div class="container">
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+  <header>
 
-    <div class="topbar">
+    <div class="container">
 
-      <div class="logo">
+      <nav>
 
-        <img src="logo_mapetx.png" class="logo-image">
+        <div class="logo">
 
-        <img src="nama_mapetx.png" class="nama-image">
+          <img src="logo_mapetx.png" class="logo-image">
 
-      </div>
+          <img src="nama_mapetx.png" class="nama-image">
 
-      <a href="/" class="back-btn">
-        ← Back to Home
-      </a>
+        </div>
+
+        <div class="nav-links">
+
+          <a href="/">Home</a>
+
+          <a href="/privacy-policy.html">Privacy Policy</a>
+
+          <a href="mailto:mapetx.id@gmail.com">Contact</a>
+
+        </div>
+
+      </nav>
 
     </div>
 
-    <!-- =========================
-         HERO
-    ========================== -->
+  </header>
 
-    <div class="hero">
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-badge">
+        MAPETX Official Policy
+      </div>
 
       <h1>
         Privacy <span>Policy</span>
       </h1>
 
       <p>
-        Your privacy and data security are important to MAPETX. This page explains how we collect, use, and protect user information.
+        MAPETX values your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard user data when using MAPETX services and applications.
       </p>
-
-      <div class="badge">
-        Last Updated • May 2026
-      </div>
 
     </div>
 
-    <!-- =========================
-         CONTENT CARD
-    ========================== -->
+  </section>
 
-    <div class="card">
+  <!-- =========================
+       POLICY CONTENT
+  ========================== -->
 
-      <div class="section">
+  <section class="policy-section">
 
-        <h2>1. Information We Collect</h2>
+    <div class="container">
 
-        <p>
-          MAPETX may collect account information, transaction data, device information, and application usage data to provide secure and reliable services.
-        </p>
+      <div class="policy-wrapper">
 
-        <ul>
-          <li>Name, email address, and phone number</li>
-          <li>Top up and payment history</li>
-          <li>Wallet balance and transaction status</li>
-          <li>Device information and app version</li>
-        </ul>
+        <div class="policy-card">
 
-      </div>
-
-      <div class="section">
-
-        <h2>2. How We Use Data</h2>
-
-        <p>
-          User information is used to process transactions, improve service quality, maintain platform security, and support customer service operations.
-        </p>
-
-      </div>
-
-      <div class="section">
-
-        <h2>3. Payment Processing</h2>
-
-        <p>
-          Payments and top up services may be processed through trusted third-party payment providers such as Midtrans.
-        </p>
-
-      </div>
-
-      <div class="section">
-
-        <h2>4. Data Security</h2>
-
-        <p>
-          MAPETX uses secure cloud infrastructure and modern technologies to help protect user information from unauthorized access or misuse.
-        </p>
-
-      </div>
-
-      <div class="section">
-
-        <h2>5. Third-Party Services</h2>
-
-        <ul>
-          <li>Supabase</li>
-          <li>Midtrans</li>
-          <li>Google Play Services</li>
-        </ul>
-
-      </div>
-
-      <div class="section">
-
-        <h2>6. User Rights</h2>
-
-        <p>
-          Users may request updates, corrections, or deletion of personal information in accordance with applicable regulations.
-        </p>
-
-      </div>
-
-      <div class="section">
-
-        <h2>7. Contact Information</h2>
-
-        <div class="contact-box">
-
-          <strong>MAPETX Support</strong>
+          <h2>Introduction</h2>
 
           <p>
-            Email:
-            <a href="mailto:mapetx.id@gmail.com">
-              mapetx.id@gmail.com
-            </a>
+            This Privacy Policy applies to all MAPETX platforms, applications, and services. By accessing or using MAPETX, you agree to the collection and use of information in accordance with this policy.
           </p>
+
+          <div class="highlight-box">
+            <p>
+              <strong>Important:</strong> MAPETX is committed to maintaining transparency, security, and responsible handling of user information.
+            </p>
+          </div>
+
+          <h3>Information We Collect</h3>
+
+          <p>
+            We may collect various types of information to provide and improve our services, including:
+          </p>
+
+          <ul>
+            <li>Personal identification information</li>
+            <li>Account and login details</li>
+            <li>Transaction and payment information</li>
+            <li>Device and technical information</li>
+            <li>Usage analytics and service activity</li>
+          </ul>
+
+          <h3>How We Use Information</h3>
+
+          <p>
+            The information collected may be used for:
+          </p>
+
+          <ul>
+            <li>Providing and maintaining MAPETX services</li>
+            <li>Processing transactions and payments</li>
+            <li>Improving application performance and security</li>
+            <li>Responding to customer support requests</li>
+            <li>Preventing fraud and unauthorized activities</li>
+          </ul>
+
+          <h3>Data Protection</h3>
+
+          <p>
+            MAPETX implements appropriate technical and organizational measures to protect user information from unauthorized access, misuse, disclosure, or loss.
+          </p>
+
+          <h3>Third-Party Services</h3>
+
+          <p>
+            MAPETX may integrate with third-party services such as payment gateways, analytics providers, and cloud infrastructure services. These third parties may have their own privacy policies governing their use of information.
+          </p>
+
+          <h3>User Rights</h3>
+
+          <p>
+            Users may request access, correction, or deletion of personal information in accordance with applicable laws and regulations.
+          </p>
+
+          <h3>Policy Updates</h3>
+
+          <p>
+            MAPETX reserves the right to update this Privacy Policy at any time. Changes will be reflected on this page with updated effective dates when applicable.
+          </p>
+
+        </div>
+
+        <!-- CONTACT -->
+
+        <div class="contact-card">
+
+          <h2>Need More Information?</h2>
+
+          <p>
+            If you have any questions regarding this Privacy Policy or MAPETX services, please feel free to contact us through our official email.
+          </p>
+
+          <a href="mailto:mapetx.id@gmail.com" class="contact-button">
+            Contact MAPETX
+          </a>
 
         </div>
 
@@ -401,15 +545,61 @@
 
     </div>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+  </section>
 
-    <div class="footer">
-      © 2026 MAPETX. All rights reserved.
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-brand">
+
+          <div class="footer-logo">
+
+            <img src="logo_mapetx.png">
+
+            <img src="nama_mapetx.png">
+
+          </div>
+
+          <div class="footer-text">
+            © 2026 MAPETX. All rights reserved.
+          </div>
+
+        </div>
+
+        <div class="footer-links">
+
+          <h4>Quick Links</h4>
+
+          <a href="/">Home</a>
+
+          <a href="/privacy-policy.html">
+            Privacy Policy
+          </a>
+
+        </div>
+
+        <div class="footer-links">
+
+          <h4>Contact</h4>
+
+          <a href="mailto:mapetx.id@gmail.com">
+            mapetx.id@gmail.com
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
 
-  </div>
+  </footer>
 
 </body>
 </html>
