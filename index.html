@@ -40,14 +40,15 @@
        HEADER
     ========================== */
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:linear-gradient(135deg,#ff7a01,#ff9f45);
-      backdrop-filter:blur(10px);
-      box-shadow:0 4px 20px rgba(255,122,1,0.15);
-    }
+      header{
+        position:sticky;
+        top:0;
+        z-index:1000;
+        background:rgba(255,255,255,0.96);
+        backdrop-filter:blur(14px);
+        border-bottom:1px solid rgba(0,0,0,0.05);
+        box-shadow:0 4px 20px rgba(0,0,0,0.04);
+      }
 
     nav{
       display:flex;
@@ -82,7 +83,7 @@
       display:flex;
       align-items:center;
       gap:34px;
-      color:white;
+      color:#334155;
       font-size:15px;
       font-weight:600;
     }
@@ -91,9 +92,9 @@
       transition:0.3s;
     }
 
-    .nav-links a:hover{
-      opacity:0.8;
-    }
+  .nav-links a:hover{
+    color:#ff7a01;
+  }
 
     /* =========================
        HERO
