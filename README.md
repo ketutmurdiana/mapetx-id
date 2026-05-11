@@ -1,2 +1,2 @@
-# mapetx-privacy-policy
-MAPETX Privacy Policy Website
+# mapetx-id
+MAPETX Website
